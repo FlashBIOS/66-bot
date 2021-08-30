@@ -6,7 +6,7 @@ Want to install the 6d6 Bot on your Discord server? Wonderful! Simply visit the 
 
 [https://discord.com/api/oauth2/authorize?client_id=881045332404883466&permissions=0&scope=bot%20applications.commands](https://discord.com/api/oauth2/authorize?client_id=881045332404883466&permissions=0&scope=bot%20applications.commands)
 
-## Installing
+## To Run From Your Own Machine
 
 1. Install node 16 or greater.
 2. Copy `config.json-example` to `config.json`. Edit the file to include the necessary values.
