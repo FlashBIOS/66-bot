@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const { stripIndent } = require('common-tags');
 const { Dice } = require('../6d6-dice');
+const { MessageEmbed } = require('discord.js');
 
 const diceChoices = [
 	['0', 0],
@@ -37,14 +37,20 @@ module.exports = {
 	async execute(interaction) {
 		const dice = Dice.createFromString(`${interaction.options.getInteger('skill_dice')}s${interaction.options.getInteger('luck_dice')}l`);
 		const result = dice.roll();
-		const formattedSkillResult = formatRollResult(result.skillResults);
-		const formattedLuckResult = formatRollResult(result.luckResults);
+		const rollResponse = new MessageEmbed()
+			.setColor('#bb00ff')
+			.setTitle('Roll Results')
+			.addField(
+				`Skill Successes: ${result.skillSuccesses}`,
+				formatRollResult(result.skillResults),
+				true,
+			)
+			.addField(
+				`Luck Successes: ${result.luckSuccesses}`,
+				formatRollResult(result.luckResults),
+				true,
+			);
 
-		await interaction.reply(stripIndent`
-		**Skill Successes: ${result.skillSuccesses}**
-		${formattedSkillResult}
-		**Luck Successes: ${result.luckSuccesses}**
-		${formattedLuckResult}
-		`);
+		await interaction.reply(rollResponse);
 	},
 };
