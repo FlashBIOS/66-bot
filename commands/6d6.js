@@ -10,14 +10,11 @@ const diceChoices = [
 ];
 
 function formatRollResult(results) {
-	const output = results.map((result) => {
+	return results.map((result) => {
 		const r = `${result.value} ${result.die.emoji}`;
 		if (result.isSuccess) return `***${r}***`;
 		return r;
 	}).join('  ');
-
-	console.log(output);
-	return output;
 }
 
 module.exports = {
@@ -39,18 +36,17 @@ module.exports = {
 		const result = dice.roll();
 		const rollResponse = new MessageEmbed()
 			.setColor('#bb00ff')
-			.setTitle('Roll Results')
 			.addField(
-				`Skill Successes: ${result.skillSuccesses}`,
+				`Skill Successes:  ${result.skillSuccesses}`,
 				formatRollResult(result.skillResults),
 				true,
 			)
 			.addField(
-				`Luck Successes: ${result.luckSuccesses}`,
+				`Luck Successes:  ${result.luckSuccesses}`,
 				formatRollResult(result.luckResults),
 				true,
 			);
 
-		await interaction.reply(rollResponse);
+		await interaction.reply({ content: interaction.options.getUser(), embeds: [rollResponse] });
 	},
 };
