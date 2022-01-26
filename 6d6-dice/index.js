@@ -1,7 +1,7 @@
 const DIE_SKILLED = ':green_square:';
 const DIE_UNSKILLED = ':red_square:';
 const DIE_LUCKY = ':white_large_square:';
-const DIE_UNLUCKY = ':brown_square:';
+const DIE_UNLUCKY = ':black_large_square:';
 
 class Result {
 	constructor(value, isSuccess, die) {

@@ -35,7 +35,7 @@ module.exports = {
 		const dice = Dice.createFromString(`${interaction.options.getInteger('skill_dice')}s${interaction.options.getInteger('luck_dice')}l`);
 		const result = dice.roll();
 		const rollResponse = new MessageEmbed()
-			.setColor('#bb00ff')
+			.setColor('RANDOM')
 			.addField(
 				`Skill Successes:  ${result.skillSuccesses}`,
 				formatRollResult(result.skillResults),
