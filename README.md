@@ -1,8 +1,8 @@
-# 6d6-bot
+# 66-bot
 A Discord bot for the 6d6 system
 
 ## Adding the Bot To Your Server
-Want to install the 6d6 Bot on your Discord server? Wonderful! Simply visit the following link in your browser:
+Want to install the 66 Bot on your Discord server? Wonderful! Simply visit the following link in your browser:
 
 [https://discord.com/api/oauth2/authorize?client_id=881045332404883466&permissions=0&scope=bot%20applications.commands](https://discord.com/api/oauth2/authorize?client_id=881045332404883466&permissions=0&scope=bot%20applications.commands)
 
